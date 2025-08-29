@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 export default function App(){
   const dispatch=useDispatch();
-  const user=useSelector(state=>state.user);
+  const user=useSelector(state=>state.user.user);
   const navigate=useNavigate();
 
   useEffect(()=>{
@@ -37,7 +37,8 @@ return(<>
   {user? <div>
     <NavLink to='/'>Home</NavLink>
     <button onClick={handleLogout}>Logout</button>
-    <NavLink to='/adminreg'>Admin registeration</NavLink>
+
+    {user.role!="admin"?<NavLink to='/adminreg'>Admin registeration</NavLink>: <br/>  }
   </div> :<div>
     <NavLink to='/'>Home</NavLink>
     <NavLink to='/login'>Login</NavLink>

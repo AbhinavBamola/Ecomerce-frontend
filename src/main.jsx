@@ -7,6 +7,8 @@ import Login from './Components/Login.jsx'
 import Signup from './Components/Signup.jsx'
 import Home from './Components/Home.jsx'
 import AdminRegistration from './Components/AdminRegistration.jsx'
+import EditProduct from './Components/EditProduct.jsx'
+import CreatenewProduct from './Components/CreatenewProduct.jsx'
 import {createBrowserRouter,Route, createRoutesFromElements, RouterProvider} from 'react-router-dom';
 
 const router=createBrowserRouter(
@@ -16,7 +18,8 @@ const router=createBrowserRouter(
       <Route path='/login' element={<Login/>}/> 
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/adminreg' element={<AdminRegistration/>}/>
-       
+       <Route path='/createnewproduct' element={<CreatenewProduct/>}/>
+       <Route path='/editproduct/:id' element={<EditProduct/>}/>
     </Route>
   )
 )
